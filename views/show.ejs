@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <center>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+</head>
+
+<body>
+    <body style="background-color:#93B4EA;"></body>
+    <h2 style="border:3px solid rgb(8, 8, 8)",>Horarios Marcados</h2>
+            <table border="1">
+            </center>
+                <thead>
+                    <center>
+                    <tr> 
+                        <td><h2>Nome</h2></td>
+                        <td><h2>Sobrenome</h2></td>
+                        <td><h2>Telefone</h2></td>
+                        <td><h2>Corte escolhido</h2></td>
+                        <td><h2>horario</h2></td>
+                        <td><h2>Ação</h2></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% crud.forEach(function(details) { %>
+                        <tr>
+                            <td>
+                                <h3>
+                                    <center>
+                                <%= details.name %>
+                            </center>
+                            </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    <center>
+                                <%= details.surname %>
+                            </center>
+                            </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    <center>
+                                <%= details.telefone %>
+                            </center>
+                            </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    <center>
+                                <%= details.corte %>
+                            </center>
+                            </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    <center>
+                                <%= details.horario %>
+                            </center>
+                            </h3>
+                            </td>
+                            <td><a href="/edit/<%= details._id %>">Editar</a> - <a
+                                    href="/delete/<%= details._id %>">Deletar</a></td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <button><a href="/">Novo</a></button>
+        </center>
+</body>
+
+</html>
